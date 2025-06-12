@@ -14,7 +14,7 @@ A comprehensive guide to AI tools and platforms with specific prompting tips and
 {% for tool in site.tools %}
   {% if tool.category == "Code Assistant" %}
   <div class="tool-card">
-    <h3><a href="{{ tool.url }}">{{ tool.title }}</a></h3>
+    <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
     <p>{{ tool.description }}</p>
     <div class="tool-meta">
       <span class="pricing-badge pricing-{{ tool.pricing | downcase }}">{{ tool.pricing }}</span>
@@ -33,7 +33,7 @@ A comprehensive guide to AI tools and platforms with specific prompting tips and
 {% for tool in site.tools %}
   {% if tool.category == "Image Generation" %}
   <div class="tool-card">
-    <h3><a href="{{ tool.url }}">{{ tool.title }}</a></h3>
+    <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
     <p>{{ tool.description }}</p>
     <div class="tool-meta">
       <span class="pricing-badge pricing-{{ tool.pricing | downcase }}">{{ tool.pricing }}</span>
@@ -52,7 +52,7 @@ A comprehensive guide to AI tools and platforms with specific prompting tips and
 {% for tool in site.tools %}
   {% if tool.category == "AI Assistant" %}
   <div class="tool-card">
-    <h3><a href="{{ tool.url }}">{{ tool.title }}</a></h3>
+    <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
     <p>{{ tool.description }}</p>
     <div class="tool-meta">
       <span class="pricing-badge pricing-{{ tool.pricing | downcase }}">{{ tool.pricing }}</span>
@@ -71,7 +71,7 @@ A comprehensive guide to AI tools and platforms with specific prompting tips and
 {% for tool in site.tools %}
   {% if tool.category == "Writing Assistant" %}
   <div class="tool-card">
-    <h3><a href="{{ tool.url }}">{{ tool.title }}</a></h3>
+    <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
     <p>{{ tool.description }}</p>
     <div class="tool-meta">
       <span class="pricing-badge pricing-{{ tool.pricing | downcase }}">{{ tool.pricing }}</span>
@@ -92,7 +92,7 @@ A comprehensive guide to AI tools and platforms with specific prompting tips and
 <div class="tools-list">
   {% for tool in site.tools %}
   <div class="tool-item">
-    <h3><a href="{{ tool.url }}">{{ tool.title }}</a></h3>
+    <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
     <p>{{ tool.description }}</p>
     <div class="tool-tags">
       {% for tag in tool.tags %}
