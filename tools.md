@@ -27,24 +27,6 @@ A comprehensive guide to AI tools and platforms with specific prompting tips and
 {% endfor %}
 </div>
 
-## 🎨 Image Generation
-
-<div class="tools-grid">
-{% for tool in site.tools %}
-  {% if tool.category == "Image Generation" %}
-  <div class="tool-card">
-    <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
-    <p>{{ tool.description }}</p>
-    <div class="tool-meta">
-      <span class="pricing-badge pricing-{{ tool.pricing | downcase }}">{{ tool.pricing }}</span>
-      {% if tool.website %}
-        <a href="{{ tool.website }}" target="_blank" class="website-link">Visit</a>
-      {% endif %}
-    </div>
-  </div>
-  {% endif %}
-{% endfor %}
-</div>
 
 ## 🤖 AI Assistants
 
@@ -115,7 +97,6 @@ A comprehensive guide to AI tools and platforms with specific prompting tips and
 
 ### Tool-Specific Considerations
 - **Code Assistants**: Include programming language, framework, and architecture details
-- **Image Generation**: Specify style, composition, lighting, and technical parameters
 - **Writing Tools**: Define audience, tone, length, and purpose
 - **AI Assistants**: Structure requests with clear sections and deliverables
 
