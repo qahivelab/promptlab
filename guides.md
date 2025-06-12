@@ -18,7 +18,7 @@ Comprehensive guides to help you master the art and science of prompt engineerin
 <div class="guides-grid">
   {% for guide in site.guides %}
   <div class="guide-card">
-    <h3><a href="{{ guide.url }}">{{ guide.title }}</a></h3>
+    <h3><a href="{{ guide.url | relative_url }}">{{ guide.title }}</a></h3>
     
     {% if guide.description %}
       <p class="guide-description">{{ guide.description }}</p>
