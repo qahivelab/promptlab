@@ -4,8 +4,8 @@ email: your-email@example.com
 description: >-
   An experimental lab for prompt engineering techniques, templates, and best practices. 
   Test, refine, and discover powerful prompts for AI tools. Contributions welcome!
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/promptlab" # the subpath of your site for GitHub Pages
+url: "https://qahivelab.github.io" # the base hostname & protocol for your site
 
 # Build settings
 theme: minima
