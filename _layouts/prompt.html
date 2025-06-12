@@ -1,0 +1,128 @@
+---
+layout: default
+---
+
+<article class="prompt-detail">
+  <header class="prompt-header">
+    <h1>{{ page.title }}</h1>
+    
+    <div class="prompt-meta">
+      {% if page.tool %}
+        <span class="tool-badge">{{ page.tool }}</span>
+      {% endif %}
+      
+      {% if page.use_case %}
+        <span class="use-case-badge">{{ page.use_case }}</span>
+      {% endif %}
+      
+      {% if page.complexity %}
+        <span class="complexity-badge complexity-{{ page.complexity | downcase }}">
+          {{ page.complexity }}
+        </span>
+      {% endif %}
+    </div>
+    
+    {% if page.description %}
+      <p class="prompt-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="prompt-content">
+    {% if page.prompt %}
+      <div class="prompt-box">
+        <div class="prompt-header-bar">
+          <span>Prompt</span>
+          <button class="copy-btn" onclick="copyToClipboard('prompt-text')">Copy</button>
+        </div>
+        <pre id="prompt-text" class="prompt-text">{{ page.prompt }}</pre>
+      </div>
+    {% endif %}
+
+    {% if page.example_input %}
+      <div class="example-section">
+        <h3>Example Input</h3>
+        <div class="example-box">
+          <pre>{{ page.example_input }}</pre>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.example_output %}
+      <div class="example-section">
+        <h3>Example Output</h3>
+        <div class="example-box">
+          <pre>{{ page.example_output }}</pre>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="prompt-body">
+      {{ content }}
+    </div>
+
+    {% if page.tips %}
+      <div class="tips-section">
+        <h3>💡 Tips</h3>
+        <ul>
+          {% for tip in page.tips %}
+            <li>{{ tip }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {% if page.variations %}
+      <div class="variations-section">
+        <h3>🔄 Variations</h3>
+        {% for variation in page.variations %}
+          <div class="variation">
+            <h4>{{ variation.name }}</h4>
+            <div class="prompt-box">
+              <pre>{{ variation.prompt }}</pre>
+            </div>
+            {% if variation.description %}
+              <p>{{ variation.description }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <footer class="prompt-footer">
+    {% if page.tags %}
+      <div class="tags">
+        <strong>Tags:</strong>
+        {% for tag in page.tags %}
+          <a href="/tag/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if page.date %}
+      <div class="date">
+        <strong>Added:</strong> {{ page.date | date: "%B %d, %Y" }}
+      </div>
+    {% endif %}
+  </footer>
+</article>
+
+<script>
+function copyToClipboard(elementId) {
+  const element = document.getElementById(elementId);
+  const text = element.textContent;
+  
+  navigator.clipboard.writeText(text).then(function() {
+    // Show feedback
+    const btn = event.target;
+    const originalText = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script> 

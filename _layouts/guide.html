@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<div class="page">
+  <header class="page-header">
+    <h1 class="page-title">{{ page.title }}</h1>
+    
+    {% if page.description %}
+      <p class="page-description">{{ page.description }}</p>
+    {% endif %}
+    
+    <div class="page-meta">
+      {% if page.difficulty %}
+        <span class="difficulty-badge difficulty-{{ page.difficulty | downcase }}">
+          {{ page.difficulty }}
+        </span>
+      {% endif %}
+      
+      {% if page.reading_time %}
+        <span class="reading-time">📖 {{ page.reading_time }} min read</span>
+      {% endif %}
+      
+      {% if page.date %}
+        <span class="date">📅 {{ page.date | date: "%B %d, %Y" }}</span>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="page-content">
+    {{ content }}
+  </div>
+
+  {% if page.related_prompts %}
+    <div class="related-section">
+      <h3>🔗 Related Prompts</h3>
+      <ul class="related-list">
+        {% for prompt_id in page.related_prompts %}
+          {% assign prompt = site.prompts | where: "slug", prompt_id | first %}
+          {% if prompt %}
+            <li><a href="{{ prompt.url }}">{{ prompt.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  <footer class="page-footer">
+    {% if page.tags %}
+      <div class="tags">
+        <strong>🏷️ Tags:</strong>
+        {% for tag in page.tags %}
+          <a href="/tag/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+    
+    <div class="page-navigation">
+      <a href="/guides/" class="back-link">← Back to Guides</a>
+    </div>
+  </footer>
+</div> 

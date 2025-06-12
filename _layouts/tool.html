@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<article class="tool">
+  <header class="tool-header">
+    <h1>{{ page.title }}</h1>
+    
+    {% if page.description %}
+      <p class="tool-description">{{ page.description }}</p>
+    {% endif %}
+    
+    <div class="tool-meta">
+      {% if page.category %}
+        <span class="category-badge">{{ page.category }}</span>
+      {% endif %}
+      
+      {% if page.pricing %}
+        <span class="pricing-badge pricing-{{ page.pricing | downcase }}">
+          {{ page.pricing }}
+        </span>
+      {% endif %}
+      
+      {% if page.website %}
+        <a href="{{ page.website }}" target="_blank" class="website-link">Visit Website</a>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="tool-content">
+    {{ content }}
+  </div>
+
+  {% if page.prompt_tips %}
+    <div class="prompt-tips">
+      <h3>💡 Prompting Tips</h3>
+      <ul>
+        {% for tip in page.prompt_tips %}
+          <li>{{ tip }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {% if page.example_prompts %}
+    <div class="example-prompts">
+      <h3>📝 Example Prompts</h3>
+      {% for example in page.example_prompts %}
+        <div class="example-prompt">
+          <h4>{{ example.title }}</h4>
+          <div class="prompt-box">
+            <pre>{{ example.prompt }}</pre>
+          </div>
+          {% if example.description %}
+            <p>{{ example.description }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <footer class="tool-footer">
+    {% if page.tags %}
+      <div class="tags">
+        <strong>Tags:</strong>
+        {% for tag in page.tags %}
+          <a href="/tag/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if page.date %}
+      <div class="date">
+        <strong>Added:</strong> {{ page.date | date: "%B %d, %Y" }}
+      </div>
+    {% endif %}
+  </footer>
+</article> 

@@ -1,0 +1,614 @@
+@import "{{ site.theme }}";
+
+/* Custom styles for Prompt Engineering Repository */
+
+/* Prompt-specific styling */
+.prompt-detail {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.prompt-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e1e4e8;
+}
+
+.prompt-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tool-badge,
+.use-case-badge,
+.complexity-badge,
+.difficulty-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+}
+
+.tool-badge {
+  background-color: #0366d6;
+}
+
+.use-case-badge {
+  background-color: #28a745;
+}
+
+.complexity-beginner,
+.difficulty-beginner {
+  background-color: #28a745;
+}
+
+.complexity-intermediate,
+.difficulty-intermediate {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.complexity-advanced,
+.difficulty-advanced {
+  background-color: #dc3545;
+}
+
+.prompt-description {
+  font-size: 1.125rem;
+  color: #586069;
+  margin: 1rem 0;
+}
+
+/* Prompt box styling */
+.prompt-box {
+  background-color: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+}
+
+.prompt-header-bar {
+  background-color: #f1f3f4;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e1e4e8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.prompt-text {
+  padding: 1rem;
+  margin: 0;
+  background-color: #f6f8fa;
+  border: none;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.copy-btn {
+  background-color: #0366d6;
+  color: white;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.copy-btn:hover {
+  background-color: #0256cc;
+}
+
+.copy-btn.copied {
+  background-color: #28a745;
+}
+
+/* Example sections */
+.example-section {
+  margin: 2rem 0;
+}
+
+.example-box {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.example-box pre {
+  margin: 0;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* Tips section */
+.tips-section {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.tips-section h3 {
+  margin-top: 0;
+  color: #856404;
+}
+
+.tips-section ul {
+  margin-bottom: 0;
+}
+
+/* Variations section */
+.variations-section {
+  margin: 2rem 0;
+}
+
+.variation {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+}
+
+.variation h4 {
+  margin-top: 0;
+  color: #0366d6;
+}
+
+/* Tags styling */
+.tags {
+  margin: 1rem 0;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  margin: 0.125rem;
+  background-color: #f1f3f4;
+  color: #586069;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.tag:hover {
+  background-color: #e1e4e8;
+  text-decoration: none;
+}
+
+/* Guide-specific styling */
+.guide-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e1e4e8;
+}
+
+.guide-description {
+  font-size: 1.125rem;
+  color: #586069;
+  margin: 1rem 0;
+}
+
+.guide-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+  font-size: 0.875rem;
+  color: #586069;
+}
+
+.reading-time {
+  display: flex;
+  align-items: center;
+}
+
+.reading-time::before {
+  content: "🕒";
+  margin-right: 0.25rem;
+}
+
+/* Related prompts */
+.related-prompts {
+  background-color: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.related-prompts h3 {
+  margin-top: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .prompt-detail,
+  .guide {
+    padding: 0 1rem;
+  }
+  
+  .prompt-meta,
+  .guide-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .prompt-header-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .copy-btn {
+    align-self: flex-end;
+  }
+}
+
+/* Homepage enhancements */
+.home-section {
+  margin: 3rem 0;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  color: #0366d6;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .prompt-box,
+  .example-box {
+    background-color: #161b22;
+    border-color: #30363d;
+  }
+  
+  .prompt-header-bar {
+    background-color: #21262d;
+    border-color: #30363d;
+  }
+  
+  .prompt-text {
+    background-color: #161b22;
+    color: #f0f6fc;
+  }
+  
+  .tips-section {
+    background-color: #332701;
+    border-color: #7c6d00;
+  }
+  
+  .tips-section h3 {
+    color: #f7df1e;
+  }
+  
+  .tag {
+    background-color: #21262d;
+    color: #f0f6fc;
+  }
+  
+  .tag:hover {
+    background-color: #30363d;
+  }
+}
+
+/* Tools and Guides Grid Styles */
+.tools-grid, .guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.tool-card, .guide-card {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool-card:hover, .guide-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tool-card h3, .guide-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+}
+
+.tool-card h3 a, .guide-card h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.tool-card h3 a:hover, .guide-card h3 a:hover {
+  color: #007acc;
+}
+
+.tool-description, .guide-description {
+  color: #6c757d;
+  margin: 0.5rem 0 1rem 0;
+  line-height: 1.5;
+}
+
+.tool-meta, .guide-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.pricing-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.pricing-free {
+  background: #d4edda;
+  color: #155724;
+}
+
+.pricing-freemium {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.pricing-paid {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.website-link {
+  background: #007acc;
+  color: white !important;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.website-link:hover {
+  background: #005a9e;
+}
+
+.tool-tags, .guide-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 1rem;
+}
+
+.tag-more {
+  background: #6c757d;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+/* Tools List Styles */
+.tools-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.tool-item {
+  border-left: 4px solid #007acc;
+  padding-left: 1rem;
+}
+
+.tool-item h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.tool-item p {
+  margin: 0.5rem 0;
+  color: #6c757d;
+}
+
+/* Page Layout Improvements */
+.page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.page-title {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+}
+
+.page-description {
+  font-size: 1.125rem;
+  color: #6c757d;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.page-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.page-content {
+  line-height: 1.6;
+}
+
+.page-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.page-navigation {
+  margin-top: 1rem;
+}
+
+.back-link {
+  color: #007acc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.related-section {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.related-list {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.5rem;
+}
+
+.related-list li {
+  margin: 0.5rem 0;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.empty-state p {
+  color: #6c757d;
+  font-size: 1.125rem;
+}
+
+/* Prompts Grid Styles */
+.prompts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.prompt-card {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prompt-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.prompt-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+}
+
+.prompt-card h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.prompt-card h3 a:hover {
+  color: #007acc;
+}
+
+.prompt-description {
+  color: #6c757d;
+  margin: 0.5rem 0 1rem 0;
+  line-height: 1.5;
+}
+
+.prompt-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.prompt-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 1rem;
+}
+
+/* Category and Tool Lists */
+.category-list, .tool-list, .complexity-list, .recent-list {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.category-list li, .tool-list li, .complexity-list li {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.recent-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.recent-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.recent-list li:last-child {
+  border-bottom: none;
+}
+
+.recent-list .date {
+  font-size: 0.875rem;
+  color: #6c757d;
+} 
