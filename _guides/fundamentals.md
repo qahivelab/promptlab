@@ -8,7 +8,7 @@ tags:
   - basics
   - prompt-engineering
   - best-practices
-date: 2024-03-22
+date: 2025-06-12
 related_prompts:
   - ui-automation-template
   - qa-automation-engineer

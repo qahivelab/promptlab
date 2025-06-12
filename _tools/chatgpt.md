@@ -10,7 +10,7 @@ tags:
   - openai
   - conversation
   - code-generation
-date: 2024-03-22
+date: 2025-06-12
 prompt_tips:
   - "Use system messages to set context and behavior guidelines"
   - "Break complex tasks into smaller, manageable steps"

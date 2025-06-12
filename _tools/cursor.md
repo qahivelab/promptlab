@@ -9,7 +9,7 @@ tags:
   - ai-assistant
   - development
   - cursor
-date: 2024-03-22
+date: 2025-06-12
 prompt_tips:
   - "Be specific about the programming language and framework you're using"
   - "Include context about your project structure and existing patterns"

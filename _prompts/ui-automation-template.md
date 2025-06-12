@@ -10,7 +10,7 @@ tags:
   - playwright
   - ui-testing
   - cursor
-date: 2024-03-22
+date: 2025-06-12
 prompt: |
   Okay, Cursor, I need you to perform a two-stage task:
   

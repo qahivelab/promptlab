@@ -10,7 +10,7 @@ tags:
   - framework
   - pytest-bdd
   - selenium
-date: 2024-03-22
+date: 2025-06-12
 prompt: |
   As a QA Automation Engineer, I need you to:
   
