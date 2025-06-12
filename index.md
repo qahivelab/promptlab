@@ -15,29 +15,29 @@ title: "PromptLab"
 
 <div class="features-section">
   <div class="features-grid">
-    <div class="feature-card">
+    <a href="{{ "/prompts/" | relative_url }}" class="feature-card">
       <div class="feature-icon">🎯</div>
       <h3 class="feature-title">Prompt Templates</h3>
       <p class="feature-description">Ready-to-use prompts for code generation, content creation, data analysis, and creative writing.</p>
-    </div>
+    </a>
     
-    <div class="feature-card">
+    <a href="{{ "/tools/" | relative_url }}" class="feature-card">
       <div class="feature-icon">🛠️</div>
       <h3 class="feature-title">Tool-Specific Guides</h3>
       <p class="feature-description">Optimized prompts for ChatGPT, Claude, GitHub Copilot, MidJourney, and more AI platforms.</p>
-    </div>
+    </a>
     
-    <div class="feature-card">
+    <a href="{{ "/guides/" | relative_url }}" class="feature-card">
       <div class="feature-icon">📚</div>
       <h3 class="feature-title">Best Practices</h3>
       <p class="feature-description">Learn prompt structure, context management, chain-of-thought reasoning, and few-shot techniques.</p>
-    </div>
+    </a>
     
-    <div class="feature-card">
+    <a href="{{ "/cookbook/" | relative_url }}" class="feature-card">
       <div class="feature-icon">🍳</div>
       <h3 class="feature-title">Prompt Cookbook</h3>
       <p class="feature-description">Organized examples and recipes categorized by scenario and use case.</p>
-    </div>
+    </a>
   </div>
 </div>
 
