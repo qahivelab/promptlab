@@ -12,7 +12,7 @@ Comprehensive guides to help you master the art and science of prompt engineerin
 
 {% if site.guides.size == 0 %}
 <div class="empty-state">
-  <p>No guides have been added yet. <a href="/contributing/">Contribute</a> to add your expertise!</p>
+  <p>No guides have been added yet. <a href="{{ "/contributing/" | relative_url }}">Contribute</a> to add your expertise!</p>
 </div>
 {% else %}
 <div class="guides-grid">
@@ -60,7 +60,7 @@ Comprehensive guides to help you master the art and science of prompt engineerin
 ### Fundamentals
 Learn the core principles and techniques of effective prompt engineering.
 
-- **[Prompting Fundamentals](/guides/fundamentals/)** - Essential concepts and best practices
+- **[Prompting Fundamentals]({{ "/guides/fundamentals/" | relative_url }})** - Essential concepts and best practices
 - **Prompt Structure** - How to organize and format effective prompts
 - **Context Management** - Providing the right information for better results
 
@@ -104,21 +104,21 @@ Sophisticated approaches for complex use cases.
 
 ## 🔗 Related Resources
 
-- **[Prompt Collection](/prompts/)** - Browse ready-to-use prompts
-- **[Tool Guides](/tools/)** - Platform-specific prompting tips
-- **[Cookbook](/cookbook/)** - Quick reference and templates
-- **[Contributing](/contributing/)** - Share your knowledge
+- **[Prompt Collection]({{ "/prompts/" | relative_url }})** - Browse ready-to-use prompts
+- **[Tool Guides]({{ "/tools/" | relative_url }})** - Platform-specific prompting tips
+- **[Cookbook]({{ "/cookbook/" | relative_url }})** - Quick reference and templates
+- **[Contributing]({{ "/contributing/" | relative_url }})** - Share your knowledge
 
 ## 📖 Reading Path
 
 New to prompt engineering? Follow this suggested reading order:
 
-1. **[Fundamentals](/guides/fundamentals/)** - Start here for core concepts
-2. **[Tool-Specific Guides](/tools/)** - Choose your preferred AI platform
+1. **[Fundamentals]({{ "/guides/fundamentals/" | relative_url }})** - Start here for core concepts
+2. **[Tool-Specific Guides]({{ "/tools/" | relative_url }})** - Choose your preferred AI platform
 3. **[Domain Guides](#domain-specific-guides)** - Focus on your area of interest
 4. **[Advanced Techniques](#advanced-techniques)** - Expand your skills
-5. **[Cookbook](/cookbook/)** - Apply what you've learned
+5. **[Cookbook]({{ "/cookbook/" | relative_url }})** - Apply what you've learned
 
 ---
 
-**Want to contribute?** We're always looking for new guides and improvements to existing ones. Check out our [Contributing Guide](/contributing/) to get started! 
+**Want to contribute?** We're always looking for new guides and improvements to existing ones. Check out our [Contributing Guide]({{ "/contributing/" | relative_url }}) to get started! 

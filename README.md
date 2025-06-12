@@ -225,4 +225,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Ready to improve your prompting skills?** Start exploring our [Featured Prompts](/prompts/) or dive into the [Fundamentals Guide](/guides/fundamentals/)! 
+**Ready to improve your prompting skills?** Start exploring our [Featured Prompts](https://qahivelab.github.io/promptlab/prompts/) or dive into the [Fundamentals Guide](https://qahivelab.github.io/promptlab/guides/fundamentals/)! 

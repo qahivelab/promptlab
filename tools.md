@@ -87,7 +87,7 @@ A comprehensive guide to AI tools and platforms with specific prompting tips and
 ## All Tools
 
 {% if site.tools.size == 0 %}
-<p>No tools have been added yet. <a href="/contributing/">Contribute</a> to add your favorite AI tools!</p>
+<p>No tools have been added yet. <a href="{{ "/contributing/" | relative_url }}">Contribute</a> to add your favorite AI tools!</p>
 {% else %}
 <div class="tools-list">
   {% for tool in site.tools %}
@@ -121,11 +121,11 @@ A comprehensive guide to AI tools and platforms with specific prompting tips and
 
 ## 🔗 Related Resources
 
-- **[Prompt Cookbook](/cookbook/)** - Ready-to-use prompt templates
-- **[Fundamentals Guide](/guides/fundamentals/)** - Learn prompt engineering basics
-- **[Featured Prompts](/prompts/)** - Browse our prompt collection
-- **[Contributing](/contributing/)** - Add new tools and prompts
+- **[Prompt Cookbook]({{ "/cookbook/" | relative_url }})** - Ready-to-use prompt templates
+- **[Fundamentals Guide]({{ "/guides/fundamentals/" | relative_url }})** - Learn prompt engineering basics
+- **[Featured Prompts]({{ "/prompts/" | relative_url }})** - Browse our prompt collection
+- **[Contributing]({{ "/contributing/" | relative_url }})** - Add new tools and prompts
 
 ---
 
-**Missing a tool?** Help us expand this collection by [contributing](/contributing/) your favorite AI tools and prompting strategies! 
+**Missing a tool?** Help us expand this collection by [contributing]({{ "/contributing/" | relative_url }}) your favorite AI tools and prompting strategies! 

@@ -11,8 +11,8 @@ A collection of prompt examples organized by scenario and use case. Each recipe 
 ## 🔧 Development & Coding
 
 ### Code Generation
-- **[UI Automation Template](/prompts/ui-automation-template/)** - Comprehensive Playwright automation with Cursor
-- **[QA Automation Engineer](/prompts/qa-automation-engineer/)** - Structured approach to test development
+- **[UI Automation Template]({{ "/prompts/ui-automation-template/" | relative_url }})** - Comprehensive Playwright automation with Cursor
+- **[QA Automation Engineer]({{ "/prompts/qa-automation-engineer/" | relative_url }})** - Structured approach to test development
 
 ### Debugging & Analysis
 - **Code Review Prompts** - Templates for systematic code analysis
@@ -63,7 +63,7 @@ A collection of prompt examples organized by scenario and use case. Each recipe 
 ## 🤖 AI & Automation
 
 ### Workflow Automation
-- **[Incremental Development](/prompts/cursor-incremental-development/)** - Phase-based development approach
+- **[Incremental Development]({{ "/prompts/cursor-incremental-development/" | relative_url }})** - Phase-based development approach
 - **Task Planning** - Project organization templates
 - **Process Documentation** - Workflow mapping
 
@@ -97,12 +97,12 @@ Have a prompt recipe that works well? We'd love to add it to the cookbook!
 
 1. **Test Your Prompt** - Ensure it works reliably
 2. **Document the Process** - Include context and examples
-3. **Submit a Pull Request** - Follow our [Contributing Guide](/contributing/)
+3. **Submit a Pull Request** - Follow our [Contributing Guide]({{ "/contributing/" | relative_url }})
 4. **Share Your Experience** - Help others learn from your approach
 
 ---
 
-**Need help with a specific scenario?** Check our [Fundamentals Guide](/guides/fundamentals/) or browse the [full prompt collection](/prompts/).
+**Need help with a specific scenario?** Check our [Fundamentals Guide]({{ "/guides/fundamentals/" | relative_url }}) or browse the [full prompt collection]({{ "/prompts/" | relative_url }}).
 
 ---
 

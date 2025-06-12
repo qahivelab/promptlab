@@ -90,7 +90,7 @@ We welcome contributions! Here's how you can help:
 3. **Report Issues** - Found a broken prompt? Let us know
 4. **Suggest Features** - Ideas for new categories or tools
 
-See our [Contributing Guide](/contributing/) for details.
+See our [Contributing Guide]({{ "/contributing/" | relative_url }}) for details.
 
 ## 📚 Recent Additions
 

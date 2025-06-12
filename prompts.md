@@ -12,13 +12,13 @@ A curated collection of high-quality prompts for various AI tools and use cases.
 
 {% if site.prompts.size == 0 %}
 <div class="empty-state">
-  <p>No prompts have been added yet. <a href="/contributing/">Contribute</a> to add your favorite prompts!</p>
+  <p>No prompts have been added yet. <a href="{{ "/contributing/" | relative_url }}">Contribute</a> to add your favorite prompts!</p>
 </div>
 {% else %}
 <div class="prompts-grid">
   {% for prompt in site.prompts %}
   <div class="prompt-card">
-    <h3><a href="{{ prompt.url }}">{{ prompt.title }}</a></h3>
+    <h3><a href="{{ prompt.url | relative_url }}">{{ prompt.title }}</a></h3>
     
     {% if prompt.description %}
       <p class="prompt-description">{{ prompt.description }}</p>
@@ -68,13 +68,13 @@ Prompts for software development, debugging, and code generation.
 {% if dev_prompts.size > 0 %}
 <ul class="category-list">
   {% for prompt in dev_prompts %}
-  <li><a href="{{ prompt.url }}">{{ prompt.title }}</a> - {{ prompt.description | truncate: 100 }}</li>
+  <li><a href="{{ prompt.url | relative_url }}">{{ prompt.title }}</a> - {{ prompt.description | truncate: 100 }}</li>
   {% endfor %}
 </ul>
 {% else %}
-- **[UI Automation Template](/prompts/ui-automation-template/)** - Comprehensive Playwright automation with Cursor
-- **[QA Automation Engineer](/prompts/qa-automation-engineer/)** - Structured approach to test development
-- **[Cursor Incremental Development](/prompts/cursor-incremental-development/)** - Phase-based development methodology
+- **[UI Automation Template]({{ "/prompts/ui-automation-template/" | relative_url }})** - Comprehensive Playwright automation with Cursor
+- **[QA Automation Engineer]({{ "/prompts/qa-automation-engineer/" | relative_url }})** - Structured approach to test development
+- **[Cursor Incremental Development]({{ "/prompts/cursor-incremental-development/" | relative_url }})** - Phase-based development methodology
 {% endif %}
 
 ### 🧪 Testing & QA
@@ -84,7 +84,7 @@ Prompts for quality assurance, testing strategies, and automation.
 {% if qa_prompts.size > 0 %}
 <ul class="category-list">
   {% for prompt in qa_prompts %}
-  <li><a href="{{ prompt.url }}">{{ prompt.title }}</a> - {{ prompt.description | truncate: 100 }}</li>
+  <li><a href="{{ prompt.url | relative_url }}">{{ prompt.title }}</a> - {{ prompt.description | truncate: 100 }}</li>
   {% endfor %}
 </ul>
 {% else %}
@@ -100,7 +100,7 @@ Prompts for content creation, documentation, and communication.
 {% if content_prompts.size > 0 %}
 <ul class="category-list">
   {% for prompt in content_prompts %}
-  <li><a href="{{ prompt.url }}">{{ prompt.title }}</a> - {{ prompt.description | truncate: 100 }}</li>
+  <li><a href="{{ prompt.url | relative_url }}">{{ prompt.title }}</a> - {{ prompt.description | truncate: 100 }}</li>
   {% endfor %}
 </ul>
 {% else %}
@@ -116,7 +116,7 @@ Prompts for data processing, analysis, and insights generation.
 {% if data_prompts.size > 0 %}
 <ul class="category-list">
   {% for prompt in data_prompts %}
-  <li><a href="{{ prompt.url }}">{{ prompt.title }}</a> - {{ prompt.description | truncate: 100 }}</li>
+  <li><a href="{{ prompt.url | relative_url }}">{{ prompt.title }}</a> - {{ prompt.description | truncate: 100 }}</li>
   {% endfor %}
 </ul>
 {% else %}
@@ -132,12 +132,12 @@ Prompts for data processing, analysis, and insights generation.
 {% if cursor_prompts.size > 0 %}
 <ul class="tool-list">
   {% for prompt in cursor_prompts %}
-  <li><a href="{{ prompt.url }}">{{ prompt.title }}</a></li>
+  <li><a href="{{ prompt.url | relative_url }}">{{ prompt.title }}</a></li>
   {% endfor %}
 </ul>
 {% else %}
-- **[UI Automation Template](/prompts/ui-automation-template/)**
-- **[Incremental Development](/prompts/cursor-incremental-development/)**
+- **[UI Automation Template]({{ "/prompts/ui-automation-template/" | relative_url }})**
+- **[Incremental Development]({{ "/prompts/cursor-incremental-development/" | relative_url }})**
 {% endif %}
 
 ### ChatGPT
@@ -145,7 +145,7 @@ Prompts for data processing, analysis, and insights generation.
 {% if chatgpt_prompts.size > 0 %}
 <ul class="tool-list">
   {% for prompt in chatgpt_prompts %}
-  <li><a href="{{ prompt.url }}">{{ prompt.title }}</a></li>
+  <li><a href="{{ prompt.url | relative_url }}">{{ prompt.title }}</a></li>
   {% endfor %}
 </ul>
 {% else %}
@@ -159,11 +159,11 @@ Prompts for data processing, analysis, and insights generation.
 {% if playwright_prompts.size > 0 %}
 <ul class="tool-list">
   {% for prompt in playwright_prompts %}
-  <li><a href="{{ prompt.url }}">{{ prompt.title }}</a></li>
+  <li><a href="{{ prompt.url | relative_url }}">{{ prompt.title }}</a></li>
   {% endfor %}
 </ul>
 {% else %}
-- **[UI Automation Template](/prompts/ui-automation-template/)**
+- **[UI Automation Template]({{ "/prompts/ui-automation-template/" | relative_url }})**
 - **Test Generation** - Automated test creation
 - **Page Object Patterns** - Structured test organization
 {% endif %}
@@ -177,7 +177,7 @@ Perfect for those new to prompt engineering.
 {% if beginner_prompts.size > 0 %}
 <ul class="complexity-list">
   {% for prompt in beginner_prompts %}
-  <li><a href="{{ prompt.url }}">{{ prompt.title }}</a></li>
+  <li><a href="{{ prompt.url | relative_url }}">{{ prompt.title }}</a></li>
   {% endfor %}
 </ul>
 {% else %}
@@ -193,12 +193,12 @@ For users comfortable with basic prompting concepts.
 {% if intermediate_prompts.size > 0 %}
 <ul class="complexity-list">
   {% for prompt in intermediate_prompts %}
-  <li><a href="{{ prompt.url }}">{{ prompt.title }}</a></li>
+  <li><a href="{{ prompt.url | relative_url }}">{{ prompt.title }}</a></li>
   {% endfor %}
 </ul>
 {% else %}
-- **[QA Automation Engineer](/prompts/qa-automation-engineer/)**
-- **[Cursor Incremental Development](/prompts/cursor-incremental-development/)**
+- **[QA Automation Engineer]({{ "/prompts/qa-automation-engineer/" | relative_url }})**
+- **[Cursor Incremental Development]({{ "/prompts/cursor-incremental-development/" | relative_url }})**
 - Multi-step processes with context management
 {% endif %}
 
@@ -209,11 +209,11 @@ Complex prompts for experienced users.
 {% if advanced_prompts.size > 0 %}
 <ul class="complexity-list">
   {% for prompt in advanced_prompts %}
-  <li><a href="{{ prompt.url }}">{{ prompt.title }}</a></li>
+  <li><a href="{{ prompt.url | relative_url }}">{{ prompt.title }}</a></li>
   {% endfor %}
 </ul>
 {% else %}
-- **[UI Automation Template](/prompts/ui-automation-template/)**
+- **[UI Automation Template]({{ "/prompts/ui-automation-template/" | relative_url }})**
 - Chain-of-thought reasoning
 - Multi-modal and context-heavy prompts
 {% endif %}
@@ -233,14 +233,14 @@ Replace placeholder text with your specific requirements and context.
 Try the prompt and refine it based on the results you get.
 
 ### 5. Share Your Success
-If you create a great variation, consider [contributing it back](/contributing/) to help others!
+If you create a great variation, consider [contributing it back]({{ "/contributing/" | relative_url }}) to help others!
 
 ## 🔗 Related Resources
 
-- **[Cookbook](/cookbook/)** - Quick reference and recipe collection
-- **[Guides](/guides/)** - In-depth prompting techniques and strategies
-- **[Tools](/tools/)** - Platform-specific tips and best practices
-- **[Contributing](/contributing/)** - Add your own prompts to the collection
+- **[Cookbook]({{ "/cookbook/" | relative_url }})** - Quick reference and recipe collection
+- **[Guides]({{ "/guides/" | relative_url }})** - In-depth prompting techniques and strategies
+- **[Tools]({{ "/tools/" | relative_url }})** - Platform-specific tips and best practices
+- **[Contributing]({{ "/contributing/" | relative_url }})** - Add your own prompts to the collection
 
 ## 📈 Latest Additions
 
@@ -249,17 +249,17 @@ If you create a great variation, consider [contributing it back](/contributing/)
 <ul class="recent-list">
   {% for prompt in recent_prompts %}
   <li>
-    <a href="{{ prompt.url }}">{{ prompt.title }}</a>
+    <a href="{{ prompt.url | relative_url }}">{{ prompt.title }}</a>
     <span class="date">{{ prompt.date | date: "%b %d, %Y" }}</span>
   </li>
   {% endfor %}
 </ul>
 {% else %}
-- **[UI Automation Template](/prompts/ui-automation-template/)** - Mar 22, 2024
-- **[QA Automation Engineer](/prompts/qa-automation-engineer/)** - Mar 22, 2024
-- **[Cursor Incremental Development](/prompts/cursor-incremental-development/)** - Mar 22, 2024
+- **[UI Automation Template]({{ "/prompts/ui-automation-template/" | relative_url }})** - Mar 22, 2024
+- **[QA Automation Engineer]({{ "/prompts/qa-automation-engineer/" | relative_url }})** - Mar 22, 2024
+- **[Cursor Incremental Development]({{ "/prompts/cursor-incremental-development/" | relative_url }})** - Mar 22, 2024
 {% endif %}
 
 ---
 
-**Can't find what you're looking for?** Check out our [Cookbook](/cookbook/) for more templates, or [contribute](/contributing/) your own prompts to help grow the collection! 
+**Can't find what you're looking for?** Check out our [Cookbook]({{ "/cookbook/" | relative_url }}) for more templates, or [contribute]({{ "/contributing/" | relative_url }}) your own prompts to help grow the collection! 

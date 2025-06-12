@@ -38,7 +38,7 @@ layout: default
         {% for prompt_id in page.related_prompts %}
           {% assign prompt = site.prompts | where: "slug", prompt_id | first %}
           {% if prompt %}
-            <li><a href="{{ prompt.url }}">{{ prompt.title }}</a></li>
+            <li><a href="{{ prompt.url | relative_url }}">{{ prompt.title }}</a></li>
           {% endif %}
         {% endfor %}
       </ul>
@@ -50,13 +50,13 @@ layout: default
       <div class="tags">
         <strong>🏷️ Tags:</strong>
         {% for tag in page.tags %}
-          <a href="/tag/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+          <a href="{{ '/tag/' | append: tag | slugify | append: '/' | relative_url }}" class="tag">{{ tag }}</a>
         {% endfor %}
       </div>
     {% endif %}
     
     <div class="page-navigation">
-      <a href="/guides/" class="back-link">← Back to Guides</a>
+      <a href="{{ "/guides/" | relative_url }}" class="back-link">← Back to Guides</a>
     </div>
   </footer>
 </div> 

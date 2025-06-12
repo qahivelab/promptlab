@@ -198,4 +198,4 @@ After completing the task:
 3. **Iterate**: Refine prompts based on the quality of responses
 4. **Document**: Save effective prompts as templates for future use
 
-Ready to put these principles into practice? Check out our [Prompt Cookbook](/cookbook/) for specific examples and use cases. 
+Ready to put these principles into practice? Check out our [Prompt Cookbook]({{ "/cookbook/" | relative_url }}) for specific examples and use cases. 
