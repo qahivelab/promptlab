@@ -8,6 +8,7 @@ group :jekyll_plugins do
   gem "jekyll-seo-tag"
   gem "jekyll-paginate"
   gem "jekyll-archives"
+  gem "jekyll-sass-converter", "~> 3.0"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -163,6 +163,7 @@ DEPENDENCIES
   jekyll-archives
   jekyll-feed (~> 0.12)
   jekyll-paginate
+  jekyll-sass-converter (~> 3.0)
   jekyll-seo-tag
   jekyll-sitemap
   tzinfo (>= 1, < 3)
