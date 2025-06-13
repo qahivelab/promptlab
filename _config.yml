@@ -7,11 +7,15 @@ description: >-
 baseurl: "/promptlab" # the subpath of your site for GitHub Pages
 url: "https://qahivelab.github.io" # the base hostname & protocol for your site
 
+# Application configuration keys (dynamically loaded from environment variables)
+# Keys will be automatically populated by scripts/load-env.rb based on APP_KEY_* variables
+
 # Build settings
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-dotenv
 
 # Collections
 collections:

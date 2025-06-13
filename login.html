@@ -1,0 +1,157 @@
+---
+layout: default
+title: Login
+---
+
+<div class="login-container">
+  <h2>Access Required</h2>
+  <p>Please enter your access token to continue:</p>
+  
+  <form id="loginForm" class="login-form">
+    <div class="form-group">
+      <label for="token">Access Token:</label>
+      <input type="password" id="token" name="token" required>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+  
+  <div id="error-message" class="error-message" style="display: none;">
+    Invalid token. Please try again.
+  </div>
+</div>
+
+<style>
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+.login-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007cba;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005a87;
+}
+
+.error-message {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+}
+
+.success-message {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+}
+</style>
+
+<!-- Store Jekyll variables in data attributes -->
+<div id="config-data" 
+     data-home-url="{{ '/' | relative_url }}"
+     style="display: none;">
+  <!-- Truly dynamic token injection using Jekyll data -->
+  {% if site.auth_tokens %}
+    <span data-tokens="{{ site.auth_tokens }}"></span>
+  {% else %}
+    <span data-tokens=""></span>
+  {% endif %}
+</div>
+
+{% raw %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Get configuration from data attributes
+  const config = document.getElementById('config-data');
+  const homeUrl = config.getAttribute('data-home-url');
+  
+  // Get all tokens from the comma-separated data-tokens attribute
+  const tokensSpan = config.querySelector('[data-tokens]');
+  const tokensString = tokensSpan ? tokensSpan.getAttribute('data-tokens') : '';
+  const validTokens = tokensString ? tokensString.split(',').filter(function(token) {
+    return token && token.trim() !== '' && token !== 'null' && !token.includes('{{');
+  }).map(function(token) {
+    return token.trim();
+  }) : [];
+  
+  console.log('Found', validTokens.length, 'valid tokens:', validTokens);
+
+  // Check if user is already authenticated
+  if (sessionStorage.getItem('authenticated') === 'true') {
+    window.location.href = homeUrl;
+    return;
+  }
+
+  const loginForm = document.getElementById('loginForm');
+  const errorMessage = document.getElementById('error-message');
+
+  loginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const token = document.getElementById('token').value.trim();
+    
+    if (validTokens.includes(token)) {
+      sessionStorage.setItem('authenticated', 'true');
+      sessionStorage.setItem('authToken', token);
+      
+      // Show success message
+      errorMessage.style.display = 'none';
+      const successDiv = document.createElement('div');
+      successDiv.className = 'success-message';
+      successDiv.textContent = 'Login successful! Redirecting...';
+      loginForm.appendChild(successDiv);
+      
+      // Redirect to home page
+      setTimeout(function() {
+        window.location.href = homeUrl;
+      }, 1000);
+    } else {
+      errorMessage.style.display = 'block';
+      document.getElementById('token').value = '';
+    }
+  });
+});
+</script>
+{% endraw %} 

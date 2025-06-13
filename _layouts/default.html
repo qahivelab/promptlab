@@ -26,6 +26,7 @@
         <a href="{{ "/tools/" | relative_url }}">Tools</a>
         <a href="{{ "/guides/" | relative_url }}">Guides</a>
         <a href="{{ "/cookbook/" | relative_url }}">Cookbook</a>
+        <a href="#" id="logout-btn" style="display: none;">Logout</a>
       </nav>
     </div>
   </header>
@@ -43,8 +44,32 @@
   </footer>
 
   <script>
-    // Copy button functionality
+    // Authentication check
     document.addEventListener('DOMContentLoaded', function() {
+      // Skip authentication check for login page
+      if (window.location.pathname.includes('login')) {
+        return;
+      }
+      
+      // Check if user is authenticated
+      if (sessionStorage.getItem('authenticated') !== 'true') {
+        window.location.href = '{{ "/login.html" | relative_url }}';
+        return;
+      }
+      
+      // Show logout button for authenticated users
+      const logoutBtn = document.getElementById('logout-btn');
+      if (logoutBtn) {
+        logoutBtn.style.display = 'inline';
+        logoutBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          sessionStorage.removeItem('authenticated');
+          sessionStorage.removeItem('authToken');
+          window.location.href = '{{ "/login.html" | relative_url }}';
+        });
+      }
+      
+      // Copy button functionality
       const copyButtons = document.querySelectorAll('.copy-btn');
       
       copyButtons.forEach(button => {

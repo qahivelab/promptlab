@@ -38,4 +38,5 @@ tmp/
 # Local development
 .env
 .env.local
-*.log 
+*.log
+_config_secrets.yml 
